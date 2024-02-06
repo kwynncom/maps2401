@@ -6,7 +6,9 @@ class GooMaps2401Dyn1Cl {
 
 		const map = this.omap = new google.maps.Map(document.getElementById(htid),
 		{	center: {lat: centlat, lng: centlng }, 
-			zoom: zoom    });
+			zoom: zoom,
+			disableDefaultUI: true
+		});
 		
 		this.markers(markers);
 
@@ -18,10 +20,17 @@ class GooMaps2401Dyn1Cl {
 
 		const self = this;
 		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+			self.polygon = polygon;
 			const coordinates = (polygon.getPath().getArray());	 
-			GooMaps2401Dyn1PolyF(coordinates, self.oms);
+			new GooMaps2401Dyn1PolyCl(coordinates, self.oms);
 		});
 	} // func
+	
+	clear() {
+		if (this.polygon) this.polygon.setVisible(false);
+		inht('result', '');
+		byid('clbtn').style.visibility = 'hidden';
+	}
 	
 	markers(a) {
 		for (let i=0; i < a.length; i++) this.markers20(a[i]);
@@ -36,7 +45,7 @@ class GooMaps2401Dyn1Cl {
 		new google.maps.Marker(
 		{	position: pos,
 			map: this.omap,
-			title: mid	});		
+			label: mid	});		
 	}
 
 }

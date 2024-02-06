@@ -54,8 +54,7 @@ function initMapActual(){
 		<div class='menu10'>
 			<a href='./doc/mapsPolygonDoc.html'>discussion</a>
 		</div>
-		<div class='menu10'>
-			<a href='./dyn/dyn.php'>gen 2 - dynamic</a>
+		<div class='menu10'>see <a href='./dyn/dyn.php'>points in polygon version</a>
 		</div>
 		<div class='menu10'>version: <?php echo(KWGM2401_HELLO_V); ?>
 			

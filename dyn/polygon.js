@@ -1,4 +1,5 @@
-function GooMaps2401Dyn1PolyF(coos, ms) {
+class GooMaps2401Dyn1PolyCl {
+	constructor(coos, ms) {
 	const mn = ms.length;
 	let ins = [];
 	
@@ -10,8 +11,14 @@ function GooMaps2401Dyn1PolyF(coos, ms) {
 		}
 	}
 
-	kwjss.sobf('servRecv.php', { selectedMarkers : ins});
+	kwjss.sobf('servRecv.php', { selectedMarkers : ins}, (res) => this.onret(res), false);
 	
 	
 }
 
+onret(res) {
+	inht('result', res + ' are within the polygon');
+	byid('clbtn').style.visibility = 'visible';
+}
+
+}

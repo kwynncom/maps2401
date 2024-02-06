@@ -4,13 +4,16 @@
 <?php require_once(__DIR__ . '/tmpl/t20.php'); ?>
 
 <script src='/opt/kwynn/js/utils.js'></script>
+
+<script>var KWGM2402KMO;</script>
 <script src='polygon.js'></script>
 <script src='dyn.js'></script>
 
 <?php require_once(__DIR__ . '/tmpl/t30_dat.php'); ?>
 <script>
+	
 function initMap() {
-	new GooMaps2401Dyn1Cl('map', 
+	KWGM2402KMO = new GooMaps2401Dyn1Cl('map', 
 		<?php echo(maps2401GetDatCl::get('mapCenterLat')); ?>,
 		<?php echo(maps2401GetDatCl::get('mapCenterLng')); ?>,
 		<?php echo(maps2401GetDatCl::get('mapZoom'	   )); ?>,					
@@ -26,21 +29,65 @@ function initMap() {
 <style>
     body { font-family: sans-serif; }
 
-    #map {  width : 40em;
-			height: 35em;
-			border: thin solid black;    }
+	#map {
+		width : 25em;
+		height: 20em;
+		border: thin solid black; 		
+	}
+	
+    .mp05 {  
+			width: 26em;
+			height: 23em;
+			margin: auto;
+	}
+	
+	.mp10 { 
+		position: relative; 
+		width: 90vw;
+		height: 90vh;
+	}
+	
+	#result {
+		margin: 0.9em;
+		text-align: center; 
+		width: 100%;
+		height: 1.3em;
+	}
+	
+	#clbtn {
+		display: block;
+		font-size: 150%;
+		margin: auto;
+		font-weight: bold;
+		visibility: hidden;
+	}
+	
+	.btnp10 { 
+		width: 100%;
+		text-align: center;
+	}
 </style>
+
 </head>
 <body>
 	<div style='margin: 0.7em; font-size: 120%;'>
 		<div class='menu10'>
-			<a href='../'>hello world</a>
+			earlier <a href='../'>hello world</a>
 		</div>
-		<div class='menu10'>version: <?php echo(KWGM201_DYN1_V); ?>
+		<div class='menu10'>This map's version: <?php echo(KWGM201_DYN1_V); ?>
 			
 		</div>
 	</div>
-	<div id='map'></div> <!-- THE MAP ITSELF -->
+	<div >
+		<div class='mp05'>
+			<div id='map'></div> <!-- THE MAP ITSELF -->
+			<div id='result'></div>
+			<div id='btnp10'>
+			<button id='clbtn' onclick='KWGM2402KMO.clear();'>clear</button>
+			</div>
+		</div>
+	</div>
+
 </body>
 <!-- <?php echo(KWGM201_DYN1_V); ?> -->
 </html>

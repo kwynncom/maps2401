@@ -2,8 +2,8 @@
 
 interface maps2401ExampleDat {
 	const htmlTitle = 'Goo Maps dynamic data';
-	const mapCenterLat =  34.2726562;
-	const mapCenterLng = -83.8332973;
+	const mapCenterLat =  34.2929699;
+	const mapCenterLng = -83.8449646; // 34.2929699,-83.8449646
 	const mapZoom      = 12;
 	const markers = [
 		[ 34.2696248,
