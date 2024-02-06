@@ -38,7 +38,9 @@
 	</p>
 	
 	<p>To start with the API script line, the browser console complained if I didn't have the async and callback params.  Given the way the callback is 
-		declared, I defined initMap() above the Goo API inclusion (script tag).  Apparently one has to declare one's libraries, too.  The drawing library 
+		declared, I defined initMap() above the Goo API inclusion (script tag).  If I didn't do this, I could get an error to the effect that initMap() is 
+		undefined because it needs to be defined before the API inclusion line.  
+		Apparently one has to declare one's libraries, too.  The drawing library 
 		allows one to draw the polygon.  
 		
 	</p>
@@ -50,12 +52,77 @@
 			I am not certain about Maps alone.  I started with a related API, and it enforced a payment method.  Maps alone must likely would enforce this, too.
 		</p>
 		
-		<p>Note that the API key is public, so you should secure its use.  
+		<p>Note that the API key is publicly available in the HTML code, so you should secure its use.  So far, I'm testing 4 different types of restrictions.  
 			
 		</p>
+		
+		<p>You set API, http referrer and IP restriction in the APIs & Services / Credentials Goo Cloud (console) menu.  Note that IP restriction dosen't 
+			work in this case because the users' IP addresses are sent to the API from JavaScript / their browsers.  My project is using 2 APIs, so I restricted the 			key to Maps.  
+		</p>
+		
+		<p>Under AIM & Admin, you can set "Quotes & System Limits" per minute and day. 
+			
+		</p>
+		
+		<p>I'll link (eventually) to the prices for Maps.  The amount wouldn't matter unless someone were malicious or you have a lot of users.  
+			During 6 hours of testing, I would 
+			have run up 41 cents, although there are mysterious "credits" have have made that 0.  I have not figured out where those credits are coming from or how 
+			many I have.  Under "Budgets & Alerts," you can set alerts when the money value goes beyond certain points.  Based on my experience, the billing report				takes at least 7 hours to catch up with usage.  I'm not sure yet how long the quota count report takes: at least 45 minutes.
+			</p>
 	
 	
+	</section>
 	
+	<section><h3>back to the code</h3>
+		
+		<p>There were no surprises with the Map or Marker calls.  The Marker "title" is the hover-over text.  
+			</p>
+			
+			<p>It was very important to define the proper drawingMode for the drawing tools.  That setting makes the user's actions a polygon draw by default.  
+				The drawingControl(s) would give the user several options.  I turned them off (false) because I just care about polygons right now.
+				</p>
+				
+				<p>When the user connects back to the starting point and creates a polygon, the relevant handler gives the vertices of the polygon in the 
+				"coordinates" array in my code.  
+					
+				</p>
+		
+				<p>I included the click handler (in the original version) only to point out that it does not do what I expected.  It doesn't even fire at all, as best I can tell, at least 
+					not with my settings.  Supposedly the raw DOM click handler fires then the drawing tools then the map, but I'm not sure that happens, and 
+					it's not useful in my case in any event. The "polygoncomplete" action is all I care about for now.
+					
+				</p>
+		
+	</section>
+	
+	<section><h3>links</h3>
+		
+		<p>In my original versions (in GitHub), these links were in the JS / HTML code.
+			
+		</p>
+		<ul>
+			<li>loading the API: 
+				<a href='https://developers.google.com/maps/documentation/javascript/load-maps-js-api'>https://developers.google.com/maps/documentation/javascript/load-maps-js-api</a>
+				
+			</li>
+					<li>Loading the API, Overview edition: <a href='https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API'>
+				https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
+				</a>
+				
+			</li>
+			<li>Drawing Tools examples:  <a href=' https://developers.google.com/maps/documentation/javascript/examples/drawing-tools'>https://developers.google.com/maps/documentation/javascript/examples/drawing-tools</a>
+			</li>
+			<li>More Drawing info: <a href='https://developers.google.com/maps/documentation/javascript/drawinglayer'>
+					https://developers.google.com/maps/documentation/javascript/drawinglayer</a>
+				
+			</li>
+			<li>Stack Overflow answer that got me the coordinates array: <a href='https://stackoverflow.com/questions/14407451/how-to-get-point-coordinates-of-a-modified-drawingmanager-shape-googlemaps-api'>https://stackoverflow.com/questions/14407451/how-to-get-point-coordinates-of-a-modified-drawingmanager-shape-googlemaps-api</a>, user chespinoza answered Jan 18, 2013 at 23:19.
+
+				
+			</li>
+			
+		</ul>
+		
 	</section>
 
 </div>
