@@ -3,6 +3,7 @@
 <?php require_once(__DIR__ . '/tmpl/t10.php'); ?>
 <?php require_once(__DIR__ . '/tmpl/t20.php'); ?>
 
+<script src='/opt/kwynn/js/utils.js'></script>
 <script src='dyn.js'></script>
 
 <?php require_once(__DIR__ . '/tmpl/t30_dat.php'); ?>

@@ -15,7 +15,9 @@ class GooMaps2401Dyn1Cl {
 		drawingManager.setMap(map); // associate drawing tools with map
 
 		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
-			const coordinates = (polygon.getPath().getArray());	 });
+			const coordinates = (polygon.getPath().getArray());	 
+			kwjss.sobf('servRecv.php', { coo: coordinates});
+		});
 	} // func
 	
 	markers(a) {
