@@ -6,7 +6,7 @@
 
 <title>Big Evil Goo(gle) Maps polygon</title>
 
-<?php define('KWGM2401_V', '2024/02/05 22:19');  ?>
+<?php define('KWGM2401_V', '2024/02/05 22:22');  ?>
 
 <script> 	
 	function initMap() { initMapActual(); } // defined here so it's above the Goo API inclusion just below; otherwise this function is undefined
