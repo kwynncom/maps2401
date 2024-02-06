@@ -1,4 +1,4 @@
-<?php define('KWGM201_DYN1_V', '2024/02/06 00:44');  ?>
+<?php define('KWGM2401_DYN1_V', '2024/02/06 04:05');  ?>
 
 <?php require_once(__DIR__ . '/tmpl/t10.php'); ?>
 <?php require_once(__DIR__ . '/tmpl/t20.php'); ?>
@@ -74,7 +74,7 @@ function initMap() {
 		<div class='menu10'>
 			earlier <a href='../'>hello world</a>
 		</div>
-		<div class='menu10'>This map's version: <?php echo(KWGM201_DYN1_V); ?>
+		<div class='menu10'>This map's version: <?php echo(KWGM2401_DYN1_V); ?>
 			
 		</div>
 	</div>
@@ -89,5 +89,5 @@ function initMap() {
 	</div>
 
 </body>
-<!-- <?php echo(KWGM201_DYN1_V); ?> -->
+<!-- <?php echo(KWGM2401_DYN1_V); ?> -->
 </html>
