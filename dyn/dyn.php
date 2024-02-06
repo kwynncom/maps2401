@@ -1,7 +1,7 @@
+<?php define('KWGM201_DYN1_V', '2024/02/06 00:44');  ?>
+
 <?php require_once(__DIR__ . '/tmpl/t10.php'); ?>
 <?php require_once(__DIR__ . '/tmpl/t20.php'); ?>
-
-<?php define('KWGM201_DYN1_V', '2024/02/06 00:32');  ?>
 
 <script src='dyn.js'></script>
 
@@ -30,7 +30,7 @@ function initMapActual() {
 <body>
 	<div style='margin: 0.7em; font-size: 120%;'>
 		<div class='menu10'>
-			<a href='./doc/mapsPolygonDoc.html'>discussion</a>
+			<a href='../'>hello world</a>
 		</div>
 		<div class='menu10'>version: <?php echo(KWGM201_DYN1_V); ?>
 			

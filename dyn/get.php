@@ -11,6 +11,7 @@ interface maps2401ExampleDat {
 		'mark1'
 			],
 		[34.2911338,-83.8364995, 'mark2'],
+		[34.3003298,-83.8738416, 'lake1']
 	];
 	
 	public static function get(string $k) : mixed;
