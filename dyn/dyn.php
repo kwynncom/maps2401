@@ -4,11 +4,12 @@
 <?php require_once(__DIR__ . '/tmpl/t20.php'); ?>
 
 <script src='/opt/kwynn/js/utils.js'></script>
+<script src='polygon.js'></script>
 <script src='dyn.js'></script>
 
 <?php require_once(__DIR__ . '/tmpl/t30_dat.php'); ?>
 <script>
-function initMapActual() {
+function initMap() {
 	new GooMaps2401Dyn1Cl('map', 
 		<?php echo(maps2401GetDatCl::get('mapCenterLat')); ?>,
 		<?php echo(maps2401GetDatCl::get('mapCenterLng')); ?>,
@@ -18,6 +19,8 @@ function initMapActual() {
 }
 </script>
 
+<?php require_once(__DIR__ . '/../' . 'getKey.php'); ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo(GooMapsAPIKeyAccess2401::get()); ?>&loading=async&callback=initMap&libraries=drawing"></script>
   
 <link rel='stylesheet' href="../maps.css">
 <style>

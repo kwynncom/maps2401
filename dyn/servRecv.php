@@ -2,6 +2,6 @@
 
 require_once('/opt/kwynn/kwutils.php');
 
-$a = isrv('coo');
+$a = isrv('selectedMarkers');
 exit(0);
 

@@ -8,10 +8,10 @@ interface maps2401ExampleDat {
 	const markers = [
 		[ 34.2696248,
 		 -83.819695,
-		'mark1'
+		'mid1'
 			],
-		[34.2911338,-83.8364995, 'mark2'],
-		[34.3003298,-83.8738416, 'lake1']
+		[34.2911338,-83.8364995, 'mid2'],
+		[34.3003298,-83.8738416, 'mid3']
 	];
 	
 	public static function get(string $k) : mixed;
