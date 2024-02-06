@@ -6,7 +6,7 @@
 
 <title>Big Evil Goo(gle) Maps polygon</title>
 
-<?php define('KWGM2401_V', '2024/02/05 22:03'); /* not using right now, so not needed, but I find it useful */ ?>
+<?php define('KWGM2401_V', '2024/02/05 22:19');  ?>
 
 <script> 	
 	function initMap() { initMapActual(); } // defined here so it's above the Goo API inclusion just below; otherwise this function is undefined
@@ -40,6 +40,7 @@ function initMapActual(){
 } // end initMapInner() / Actual func
 </script>
   
+<link rel='stylesheet' href="maps.css">
 <style>
     body { font-family: sans-serif; }
 
@@ -49,7 +50,15 @@ function initMapActual(){
 </style>
 </head>
 <body>
-	<div style='margin: 1em; font-size: 120%;'><a href='./doc/mapsPolygonDoc.html'>discussion</a></div>
+	<div style='margin: 0.7em; font-size: 120%;'>
+		<div class='menu10'>
+			<a href='./doc/mapsPolygonDoc.html'>discussion</a>
+		</div>
+		<div class='menu10'>version: <?php echo(KWGM2401_V); ?>
+			
+		</div>
+	</div>
 	<div id='map'></div> <!-- THE MAP ITSELF -->
 </body>
+<!-- <?php echo(KWGM2401_V); ?> -->
 </html>
