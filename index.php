@@ -8,7 +8,7 @@
 
 <script src='/opt/kwynn/js/utils.js'></script> <!-- https://github.com/kwynncom/kwynn-php-general-utils -->
 
-<?php define('KWGM2401_V', '2242'); ?>
+<?php define('KWGM2401_V', '2024/02/05 20:44'); ?>
 
 <script> function initMap() { initMapInner(); } </script>
 
@@ -57,15 +57,15 @@ function initMapInner(){
     body { font-family: sans-serif; }
 
     #map {
-      width : 80vw;
-      height: 80vh;
+      width : 40em;
+      height: 35em;
       border: thin solid black;
 	  text-align: center;
     }
 </style>
 </head>
 <body>
-	<div><?php echo(KWGM2401_V); ?></div>
+	<div style='margin: 1em; font-size: 120%;'><a href='./doc/mapsPolygonDoc.html'>discussion</a></div>
 	<div id='map'></div>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'    >
+<meta name='viewport' content='width=device-width, initial-scale=1.0' >
+
+<title>Goo Maps Polygon documentation</title>
+
+<style>
+    body { font-family: sans-serif; }
+	
+	.menu10 {
+		display: inline-block;
+		margin-right: 1.7em; 
+	}
+</style>
+</head>
+<body>
+<div style='margin-top: 1ex; margin-left: 1ex; '>
+	<div class='menu10'><a href='../'>the map</a></div>
+	<div class='menu10'><a href='/'>home</a></div>
+	<div class='menu10'><a href='https://github.com/kwynncom/maps2401'>source code</a>, with earlier versions</div>
+</div>
+<section><h1>documentation of Big Evil Goo(gle) Maps polygons and such</h1>
+
+<div>
+	
+	<p>If you click the map and then start moving the pointer, you'll draw a line.  If you click again, the line segment ends and moving will make the next 
+		side of the polygon.  When you touch the original point, after 3 or more segments, Goo will shade the area of the polygon.  </p>
+	
+	<p>I need to display markers (pins) based on user data and then allow the user to select a polygon.  Then I will check (on the server side) whether the 
+		various pins are within the polygon.  </p>
+	
+	<p>Here, I'm documenting this process and making note of non-obvious points.</p>
+	
+	<p>For this first version, the code is (essentially) all on the front-end (so you can see it in a browser).  Some notes on the code, starting (more or less) from 
+		top to bottom:
+	</p>
+	
+	<p>To start with the API script line, the browser console complained if I didn't have the async and callback params.  Given the way the callback is 
+		declared, I defined initMap() above the Goo API inclusion (script tag).  Apparently one has to declare one's libraries, too.  The drawing library 
+		allows one to draw the polygon.  
+		
+	</p>
+	
+	<section><h3>defining a Goo Cloud Project and the API key</h3>
+		
+		<p>To get an API key, you have to create a Goo Cloud project in the <a href='https://console.cloud.google.com/'>Cloud console</a>.  You have to 
+			include the Maps API in the project (using the console).  You (almostly certainly) must have Billing / a payment method attached to the project.  
+			I am not certain about Maps alone.  I started with a related API, and it enforced a payment method.  Maps alone must likely would enforce this, too.
+		</p>
+		
+		<p>Note that the API key is public, so you should secure its use.  
+			
+		</p>
+	
+	
+	
+	</section>
+
+</div>
+
+</section>
+</body>
+</html>
