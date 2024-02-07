@@ -31,11 +31,21 @@
 	
 	<section><h2>part 3</h2>
 		
-		<p>Note that the following involves creating a "map ID."  
+		
+		<p>I made an observation that there is a non-linear effect from 750 markers to 1,500 to 3,000.  I have an old computer but I was surprised at the 
+			degree it became CPU bound (client side JS) and crawled trying to render 3,000 markers.  1,500 is much faster but still slow.  750 is fairly fast, as I remember.  
+			At 3,000 markers the speed is unacceptably slow.  1,500 is still unacceptable.  1,000 and 750 are borderline.  400 is much better, but one 
+			can still see the rendering.  One can still see it at 200.  100 is fast enough, although rendering is visible.
+			
+		</p>
+		
+		<p>Note that styling map labels, below, involves creating a "map ID."  
 			
 		</p>
 		
 		<ul>
+			<li><a href='https://developers.google.com/maps/documentation/javascript/reference/map#Map.fitBounds'>set bounds of map</a>(fitBounds())</li>
+			<li><a href='https://stackoverflow.com/questions/6048975/google-maps-v3-how-to-calculate-the-zoom-level-for-a-given-bounds'>related to fitBounds()</a> - StackOverflow on calculating zoom level
 			<li><a href='https://snazzymaps.com/style/24088/map-without-labels'>styling labels example</a></li>
 			<li><a href='https://developers.google.com/maps/documentation/javascript/style-reference'>styling map labels and such - official</a></li>
 		</ul>
