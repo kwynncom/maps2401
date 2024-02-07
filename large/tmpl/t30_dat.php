@@ -2,7 +2,7 @@
 <?php require_once(__DIR__ . '/t20.php'); ?>
 
 <script>
-	const GooMaps2401Dyn1_MARKERS_GL = <?php echo(json_encode(maps2401GetDatCl::get('markers'), JSON_PRETTY_PRINT)); ?>;
+	const GooMaps2401Dyn1_MARKERS_GL = <?php echo(json_encode(maps2401GetRealDatCl::get('markers'), JSON_PRETTY_PRINT)); ?>;
 </script>
 
 <script src='/opt/kwynn/js/utils.js'></script>
@@ -15,8 +15,8 @@
 	
 function initMap() {
 	KWGM2402KMO = new GooMaps2401Dyn1Cl('map', 
-		<?php echo(json_encode(maps2401GetDatCl::get('mapCenter'))); ?>,
-		<?php echo(maps2401GetDatCl::get('mapZoom'	   )); ?>,					
+		<?php echo(json_encode(maps2401GetRealDatCl::get('mapCenter'))); ?>,
+		<?php echo(maps2401GetRealDatCl::get('mapZoom'	   )); ?>,					
 		GooMaps2401Dyn1_MARKERS_GL
 	);
 }

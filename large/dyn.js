@@ -7,7 +7,7 @@ class GooMaps2401Dyn1Cl {
 		const map = this.omap = new google.maps.Map(document.getElementById(htid),
 		{	center: {lat: cent[0], lng: cent[1] }, 
 			zoom: zoom,
-			disableDefaultUI: true
+			disableDefaultUI: false
 		});
 		
 		this.markers(markers);
@@ -39,13 +39,13 @@ class GooMaps2401Dyn1Cl {
 	markers20(a) {
 		
 		const pos = { lat: a[0], lng: a[1]};
-		const mid = a[2];
-		this.oms[mid] = pos;
+		const marid = a[2];
+		this.oms[marid] = pos;
 		
 		new google.maps.Marker(
 		{	position: pos,
 			map: this.omap,
-			label: mid	});		
+			label: marid	});		
 	}
 
 }
