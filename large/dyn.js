@@ -5,11 +5,17 @@ class GooMaps2401Dyn1Cl {
 		this.omso = {};
 		this.omsa = [];
 
+		var bounds = new google.maps.LatLngBounds();
+		bounds.extend({ lat : 33.6594825, lng: -84.6227406});
+		bounds.extend({ lat : 34.3868047, lng: -83.6681089});
+	
 		const map = this.omap = new google.maps.Map(document.getElementById(htid),
-		{	center: {lat: cent[0], lng: cent[1] }, 
-			zoom: zoom,
+		{	// center: {lat: cent[0], lng: cent[1] }, 
+			// zoom: zoom,
 			disableDefaultUI: false
 		});
+		
+		map.fitBounds(bounds, 0);
 		
 		this.markers(markers);
 		
