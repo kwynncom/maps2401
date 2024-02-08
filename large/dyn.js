@@ -2,7 +2,8 @@ class GooMaps2401Dyn1Cl {
 
 	constructor(htid, cent, zoom, markers) {
 		
-		this.oms = {};
+		this.omso = {};
+		this.omsa = [];
 
 		const map = this.omap = new google.maps.Map(document.getElementById(htid),
 		{	center: {lat: cent[0], lng: cent[1] }, 
@@ -11,6 +12,9 @@ class GooMaps2401Dyn1Cl {
 		});
 		
 		this.markers(markers);
+		
+		new markerClusterer.MarkerClusterer({ markers: this.omsa, map: map });
+
 
 		const drawingManager = new google.maps.drawing.DrawingManager({
 			drawingMode: google.maps.drawing.OverlayType.POLYGON,
@@ -22,7 +26,7 @@ class GooMaps2401Dyn1Cl {
 		google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
 			self.polygon = polygon;
 			const coordinates = (polygon.getPath().getArray());	 
-			new GooMaps2401Dyn1PolyCl(coordinates, self.oms);
+			new GooMaps2401Dyn1PolyCl(coordinates, self.omso);
 		});
 	} // func
 	
@@ -40,12 +44,14 @@ class GooMaps2401Dyn1Cl {
 		
 		const pos = { lat: a[0], lng: a[1]};
 		const marid = a[2];
-		this.oms[marid] = pos;
+		this.omso[marid] = pos;
 		
-		new google.maps.Marker(
+		const m = new google.maps.Marker(
 		{	position: pos,
-			map: this.omap,
+			// map: this.omap, // don't add to map because we will cluster
 			label: marid	});		
+		
+		this.omsa.push(m);
 	}
 
 }
