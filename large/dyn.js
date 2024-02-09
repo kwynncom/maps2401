@@ -1,23 +1,21 @@
 class GooMaps2401Dyn1Cl {
 
-	constructor(htid, cent, zoom, markers) {
+	constructor(htid, markers) {
 		
 		this.omso = {};
 		this.omsa = [];
 
-		var bounds = new google.maps.LatLngBounds();
-		bounds.extend({ lat : 33.6594825, lng: -84.6227406});
-		bounds.extend({ lat : 34.3868047, lng: -83.6681089});
+		this.bounds = new google.maps.LatLngBounds();
 	
 		const map = this.omap = new google.maps.Map(document.getElementById(htid),
-		{	// center: {lat: cent[0], lng: cent[1] }, 
-			// zoom: zoom,
+		{	
 			disableDefaultUI: false
 		});
 		
-		map.fitBounds(bounds, 0);
 		
 		this.markers(markers);
+		
+		map.fitBounds(this.bounds);
 		
 		new markerClusterer.MarkerClusterer({ markers: this.omsa, map: map });
 
@@ -49,12 +47,14 @@ class GooMaps2401Dyn1Cl {
 	markers20(a) {
 		
 		const pos = { lat: a[0], lng: a[1]};
+		
+		this.bounds.extend(pos);
+		
 		const marid = a[2];
 		this.omso[marid] = pos;
 		
 		const m = new google.maps.Marker(
 		{	position: pos,
-			// map: this.omap, // don't add to map because we will cluster
 			label: marid	});		
 		
 		this.omsa.push(m);

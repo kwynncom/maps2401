@@ -15,8 +15,6 @@
 	
 function initMap() {
 	KWGM2402KMO = new GooMaps2401Dyn1Cl('map', 
-		<?php echo(json_encode(maps2401GetRealDatCl::get('mapCenter'))); ?>,
-		<?php echo(maps2401GetRealDatCl::get('mapZoom'	   )); ?>,					
 		GooMaps2401Dyn1_MARKERS_GL
 	);
 }
