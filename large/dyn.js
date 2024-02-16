@@ -46,11 +46,11 @@ class GooMaps2401Dyn1Cl {
 	
 	markers20(a) {
 		
-		const pos = { lat: a[0], lng: a[1]};
+		const pos = { lat: a['lat'], lng: a['lng']};
 		
 		this.bounds.extend(pos);
 		
-		const marid = a[2];
+		const marid = a['cuid'].toString();
 		this.omso[marid] = pos;
 		
 		const m = new google.maps.Marker(
