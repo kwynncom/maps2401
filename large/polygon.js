@@ -1,5 +1,6 @@
 class GooMaps2401Dyn1PolyCl {
-	constructor(coos, ms) {
+	constructor(coos) {
+	const ms = KWGM2402KMO.omso;
 	const mn = ms.length;
 	let ins = [];
 	
@@ -18,7 +19,7 @@ class GooMaps2401Dyn1PolyCl {
 
 onret(res) {
 	inht('result', res);
-	byid('clbtn').style.visibility = 'visible';
+	// byid('clbtn').style.visibility = 'visible';
 }
 
 }

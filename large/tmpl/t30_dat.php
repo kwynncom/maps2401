@@ -10,6 +10,8 @@
 <script>var KWGM2402KMO;</script>
 <script src='polygon.js'></script>
 <script src='dyn.js'></script>
+<script src='initMap.js'></script>
+<script src='draw.js'   ></script>
 
 <script>
 	
@@ -17,10 +19,14 @@ function initMap() {
 	KWGM2402KMO = new GooMaps2401Dyn1Cl('map', 
 		GooMaps2401Dyn1_MARKERS_GL
 	);
+	
+	GLTHEDMO = new drawCl();
 }
 </script>
 
-<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+
 
 <?php require_once(__DIR__ . '/../../' . 'getKey.php'); ?>
+
+<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo(GooMapsAPIKeyAccess2401::get()); ?>&loading=async&callback=initMap&libraries=drawing"></script>

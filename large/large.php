@@ -8,15 +8,19 @@ require_once('./tmpl/t30_dat.php');
     body { font-family: sans-serif; }
 
 	#map {
-		width : 90vw;
-		height: 90vh;
-		border: thin solid black; 		
+		width : 80vw;
+		height: 80vh;
+		border: thin solid black;
+		position: absolute;
+		left: 0;
+		top:  0;
 	}
 	
     .mp05 {  
 			width: 100%;
 			height: 100%;
 			margin: auto;
+			position: relative;
 	}
 	
 	.mp10 { 
@@ -41,14 +45,18 @@ require_once('./tmpl/t30_dat.php');
 	}
 	
 	.btnp10 { 
-		width: 100%;
-		text-align: center;
+		width: 15vw;
 		margin-top: 1em;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 	
 	pre { 
 		font-size: 150%;
 	}
+	
+	.polyb10 { font-size: 130%; }
 </style>
 
 </head>
@@ -57,7 +65,8 @@ require_once('./tmpl/t30_dat.php');
 		<div class='mp05'>
 			<div id='map'></div> <!-- THE MAP ITSELF -->
 			<div class='btnp10'>
-			<button id='clbtn' onclick='KWGM2402KMO.clear();'>clear</button>
+				<button class='polyb10' onclick='GLTHEDMO.vis10(true);' id='dp10btn'>draw polygon</button>
+			<button id='clbtn' onclick='GLTHEDMO.clear();'>clear</button>
 			</div>
 			<pre id='result'></pre>
 
