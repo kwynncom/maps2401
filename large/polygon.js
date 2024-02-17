@@ -12,14 +12,13 @@ class GooMaps2401Dyn1PolyCl {
 		}
 	}
 
-	kwjss.sobf('servRecv.php', { selectedMarkers : ins, polygon: coos}, (res) => this.onret(res), false);
+	kwjss.sobf('servRecv.php', { selectedMarkers : ins, polygon: coos}, (res) => this.onret(res));
 	
 	
 }
 
 onret(res) {
-	inht('result', res);
-	// byid('clbtn').style.visibility = 'visible';
+	GLRESULTO.set(res);
 }
 
 }

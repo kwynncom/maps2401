@@ -32,6 +32,8 @@ class drawCl {
 		if (!dir) {
 			dir = false;
 			if (this.polygon) this.polygon.setVisible(false);
+		} else {
+			GLRESULTO.set();
 		}
 		
 		const e = byid('dp10btn');

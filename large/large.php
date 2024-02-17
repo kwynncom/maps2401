@@ -31,8 +31,9 @@ require_once('./tmpl/t30_dat.php');
 	
 	#result {
 		margin: 0.9em;
-		text-align: center; 
 		width: 100%;
+		font-size: 130%;
+		visibility: hidden; 
 
 	}
 	
@@ -67,8 +68,9 @@ require_once('./tmpl/t30_dat.php');
 			<div class='btnp10'>
 				<button class='polyb10' onclick='GLTHEDMO.vis10(true);' id='dp10btn'>draw polygon</button>
 			<button id='clbtn' onclick='GLTHEDMO.clear();'>clear</button>
+			<div id='result'></div>
 			</div>
-			<pre id='result'></pre>
+
 
 		</div>
 	</div>

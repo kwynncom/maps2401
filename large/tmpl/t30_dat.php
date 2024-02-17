@@ -12,6 +12,7 @@
 <script src='dyn.js'></script>
 <script src='initMap.js'></script>
 <script src='draw.js'   ></script>
+<script src='result.js'   ></script>
 
 <script>
 	
