@@ -1,3 +1,7 @@
+<?php
+	require_once(__DIR__ . '/placeholder.html');
+	exit(0);
+?>
 <?php define('KWGM2401_DYN1_V', '2024/02/06 PM (19:23)');  
 
 require_once('./tmpl/t30_dat.php'); 

@@ -12,8 +12,13 @@
 	function initMap() { initMapActual(); } // defined here so it's above the Goo API inclusion just below; otherwise this function is undefined
 </script>
 
-<?php require_once('getKey.php'); ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo(GooMapsAPIKeyAccess2401::get()); ?>&loading=async&callback=initMap&libraries=drawing"></script>
+<?php 
+// require_once('getKey.php'); // key going away
+?>
+<!--
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php /* echo(GooMapsAPIKeyAccess2401::get()); */ ?>&loading=async&callback=initMap&libraries=drawing
+"></script>
+-->
 
 <script>
 	
